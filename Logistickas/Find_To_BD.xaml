@@ -1,0 +1,26 @@
+﻿<Window x:Class="Logistickas.Find_To_BD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Logistickas"
+        mc:Ignorable="d"
+        Title="Поиск записи" Height="350" Width="480" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFE9F0F7" >
+        <TextBlock FontSize="22" TextAlignment="Center" Width="400" Text="Выберите способ поиска" Height="50"  VerticalAlignment="Top"/>
+        
+        <StackPanel Height="100" Margin="0 10 0 0" Width="450" HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Horizontal">            
+            <Button x:Name="Button_Find_ID" Height="50" Width="210"  Margin="10 10 5 0" HorizontalAlignment="Left" Content="Поиск по коду товара" Click="Button_Find_ID_Click"/>
+            <Button x:Name="Button_Find_Name" Height="50" Width="210"  Margin="5 10 0 0" HorizontalAlignment="Right" Content="Поиск по названию товара" Click="Button_Find_Name_Click"/>
+        </StackPanel>
+        <StackPanel Height="130">
+            <TextBlock x:Name="TextBlock_Find" TextAlignment="Center" Margin="0 10 0 0"  FontSize="22" Height="40" Width="400"/>
+            <TextBox FontSize="22" x:Name="TextBox_Find" Width="400"  Height="70" TextChanged="TextBox_Find_TextChanged"/>
+        </StackPanel>
+        <Button x:Name="Button_Find_OK" Content="Поиск" VerticalAlignment="Bottom" Height="50" Width="150" Margin="10" Click="Button_Find_OK_Click"/>
+
+
+
+
+    </Grid>
+</Window>

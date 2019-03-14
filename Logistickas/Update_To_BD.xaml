@@ -1,0 +1,35 @@
+﻿<Window x:Class="Logistickas.Update_To_BD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Logistickas"
+        mc:Ignorable="d"
+        Title="Изменение данных" Height="550" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFE9F0F7">
+        <StackPanel Margin="70 0" Height="160" Orientation="Vertical" VerticalAlignment="Top">
+            <TextBlock FontSize="22" Text="Код товара" Margin="0 10 0 0" TextAlignment="Center"/>
+            <TextBox x:Name="TextBox_ID_Update" Height="40" Width="400" FontSize="22" />
+            <TextBlock FontSize="22" Margin="0 10 0 0" Text="Название товара" TextAlignment="Center"/>
+            <TextBox Height="40" Width="400" FontSize="22"/>
+        </StackPanel>
+        <TextBlock Height="40" TextAlignment="Center" VerticalAlignment="Top" Margin=" 0 160 0 0" Text=" Изменить количество товара" FontSize="22"/>
+        <StackPanel Height="60" Orientation="Horizontal" Margin="10 200 0 0" VerticalAlignment="Top" >
+            <Button x:Name="Button_Add" Height="50" Width="170" Margin="10 0 20 0" Content="Прибавить" FontSize="22" Click="Button_Add_Click"/>
+            <Button x:Name="Button_Reduce" Height="50" Width="170" Margin="0 0 20 0" Content="Отнять" FontSize="22" Click="Button_Reduce_Click"/>
+            <Button x:Name="Button_New_Add" Height="50" Width="170" Margin="0 0 30 0" Content="Задать новое" FontSize="22" Click="Button_New_Add_Click"/>
+        </StackPanel>
+        <StackPanel Margin="70 130" Height="130" Orientation="Vertical" VerticalAlignment="Bottom">
+            
+            <TextBox Height="40"  Width="400" FontSize="22" />
+            <TextBlock FontSize="22" Margin="0 10 0 0" Text="Цена за одну еденицу товара" TextAlignment="Center"/>
+            <TextBox Height="40" Width="400" FontSize="22"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Height="70" Margin="100 0 100 25">
+            <Button x:Name="Button_Update" Height="50" Width="170" Margin="10" Content="Изменить" FontSize="22"/>
+            <Button x:Name="Button_Cancel"  Height="50" Width="170" Margin="10" Content="Отмена" FontSize="22" Click="Button_Cancel_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
