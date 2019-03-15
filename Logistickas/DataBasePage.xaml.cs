@@ -170,32 +170,41 @@ namespace Logistickas
         {
             try
             {
-                Update_To_BD update_To = new Update_To_BD();
 
-                update_To.ShowDialog();
-                commanStr = "SELECT * FROM MAIN";
-
-                SQLiteCommand command = new SQLiteCommand(commanStr, DB);
-
-                adapter = new SQLiteDataAdapter(command);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                dataTable.TableName = "MAIN";
-                DataView view = new DataView(dataTable, "", "Код_товара", DataViewRowState.CurrentRows);
-                number_ID_Data = (Int64)DataGrids.CurrentRow.Cells[0].Value;
-
-                if (number_ID_Data != -1)
+                using (DB = new SQLiteConnection(cnStr))
                 {
-                    DataRow row = dataTable.Rows[(int)number_ID_Data];
 
-                    update_To.TextBox_ID_Update.Text = row[0].ToString();
+                    Update_To_BD update_To = new Update_To_BD();
+
+                    commanStr = "SELECT * FROM MAIN";
+
+                    SQLiteCommand command = new SQLiteCommand(commanStr, DB);
+
+                    adapter = new SQLiteDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataTable.TableName = "MAIN";
+                    DataView view = new DataView(dataTable, "", "Код_товара", DataViewRowState.CurrentRows);
+                    number_ID_Data =view.Find( (long)DataGrids.CurrentRow.Cells[0].Value);
+
+                    if (number_ID_Data != -1)
+                    {
+                        DataRow row = dataTable.Rows[(int)number_ID_Data];
+
+                        update_To.TextBox_ID_Update.Text = row["Код_товара"].ToString();
+                        update_To.TextBox_Name_Update.Text = row["Название_товара"].ToString();
+
+                    }
+                    update_To.ShowDialog();
 
                 }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        
 
         }
     }
