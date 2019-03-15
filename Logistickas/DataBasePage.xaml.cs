@@ -193,6 +193,8 @@ namespace Logistickas
 
                         update_To.TextBox_ID_Update.Text = row["Код_товара"].ToString();
                         update_To.TextBox_Name_Update.Text = row["Название_товара"].ToString();
+                        update_To.TextBox_Add_Update.Text = row["Количество_товара"].ToString();
+                        update_To.TextBox_Price_Update.Text = row["Цена_за_еденицу_товара"].ToString();
 
                     }
                     update_To.ShowDialog();
