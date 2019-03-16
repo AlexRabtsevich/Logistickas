@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:Logistickas"
         mc:Ignorable="d"
         Title="Изменение данных" Height="550" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FFE9F0F7">
+    <Grid Loaded="Grid_Loaded" Background="#FFE9F0F7">
         <StackPanel Margin="70 0" Height="160" Orientation="Vertical" VerticalAlignment="Top">
             <TextBlock FontSize="22" Text="Код товара" Margin="0 10 0 0" TextAlignment="Center"/>
             <TextBox x:Name="TextBox_ID_Update" Height="40" Width="400" FontSize="22" />
             <TextBlock FontSize="22" Margin="0 10 0 0" Text="Название товара" TextAlignment="Center"/>
-            <TextBox x:Name="TextBox_Name_Update" Height="40" Width="400" FontSize="22"/>
+            <TextBox x:Name="TextBox_Name_Update" Height="40" Width="400" FontSize="22" />
         </StackPanel>
         <TextBlock Height="40" TextAlignment="Center" VerticalAlignment="Top" Margin=" 0 160 0 0" Text=" Изменить количество товара" FontSize="22"/>
         <StackPanel Height="60" Orientation="Horizontal" Margin="10 200 0 0" VerticalAlignment="Top" >
@@ -26,7 +26,7 @@
             <TextBox x:Name="TextBox_Price_Update" Height="40" Width="400" FontSize="22"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Height="70" Margin="100 0 100 25">
-            <Button x:Name="Button_Update" Height="50" Width="170" Margin="10" Content="Изменить" FontSize="22"/>
+            <Button x:Name="Button_Update" Height="50" Width="170" Margin="10" Content="Изменить" FontSize="22" Click="Button_Update_Click"/>
             <Button x:Name="Button_Cancel"  Height="50" Width="170" Margin="10" Content="Отмена" FontSize="22" Click="Button_Cancel_Click"/>
 
         </StackPanel>

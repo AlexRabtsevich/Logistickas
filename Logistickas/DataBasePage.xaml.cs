@@ -25,7 +25,7 @@ namespace Logistickas
     public partial class DataBasePage : UserControl
     {
         private SQLiteConnection DB;
-        private string cnStr = "Data Source=Bd\\Base.db; Version=3";
+        private readonly string cnStr = "Data Source=Bd\\Base.db; Version=3";
         private string commanStr = string.Empty;
         SQLiteDataAdapter adapter;
         DataSet table;
@@ -36,6 +36,7 @@ namespace Logistickas
         {
             InitializeComponent();
             InitializeDataGrids();
+            
 
         }
 
@@ -170,7 +171,6 @@ namespace Logistickas
         {
             try
             {
-
                 using (DB = new SQLiteConnection(cnStr))
                 {
 
@@ -181,10 +181,15 @@ namespace Logistickas
                     SQLiteCommand command = new SQLiteCommand(commanStr, DB);
 
                     adapter = new SQLiteDataAdapter(command);
+
                     DataTable dataTable = new DataTable();
+
                     adapter.Fill(dataTable);
+
                     dataTable.TableName = "MAIN";
+
                     DataView view = new DataView(dataTable, "", "Код_товара", DataViewRowState.CurrentRows);
+
                     number_ID_Data =view.Find( (long)DataGrids.CurrentRow.Cells[0].Value);
 
                     if (number_ID_Data != -1)
@@ -194,13 +199,13 @@ namespace Logistickas
                         update_To.TextBox_ID_Update.Text = row["Код_товара"].ToString();
                         update_To.TextBox_Name_Update.Text = row["Название_товара"].ToString();
                         update_To.TextBox_Add_Update.Text = row["Количество_товара"].ToString();
-                        update_To.TextBox_Price_Update.Text = row["Цена_за_еденицу_товара"].ToString();
+                        update_To.TextBox_Price_Update.Text = row["Цена_товара_за_одну_еденицу"].ToString();
 
                     }
+
                     update_To.ShowDialog();
 
                 }
-
             }
             catch (Exception ex)
             {
@@ -208,6 +213,11 @@ namespace Logistickas
             }
         
 
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            OpenBD();
         }
     }
 }

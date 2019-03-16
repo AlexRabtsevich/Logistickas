@@ -11,7 +11,7 @@
     <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.0}">
         <Grid>        
        
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="auto">
+            <Grid Loaded="Grid_Loaded" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="auto">
                 <StackPanel Margin="5" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Horizontal">
                     
                     <StackPanel Orientation="Horizontal">
