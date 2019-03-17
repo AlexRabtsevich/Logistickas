@@ -23,6 +23,18 @@ namespace Logistickas
         public Driver_Pages()
         {
             InitializeComponent();
+            //List<Driver> drivers = new List<Driver>();
+
+            //drivers.Add(new Driver("Alex", "Rab", "Alex", "DMw", "222", "22223", 33));
+            
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Driver> drivers = new List<Driver>();
+
+            drivers.Add(new Driver("Alex", "Rab", "Alex", "DMw", "222", "22223", 33));
+            ListData.ItemsSource = drivers;
         }
     }
 }

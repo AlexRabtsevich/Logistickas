@@ -110,3 +110,7 @@ C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\Main_Pages.g.
 C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\Main_Pages.baml
 C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\Driver_Pages.g.cs
 C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\Driver_Pages.baml
+C:\data\Logistickas\Logistickas\obj\Debug\Driver_Pages.g.cs
+C:\data\Logistickas\Logistickas\obj\Debug\Main_Pages.g.cs
+C:\data\Logistickas\Logistickas\obj\Debug\Driver_Pages.baml
+C:\data\Logistickas\Logistickas\obj\Debug\Main_Pages.baml

@@ -7,16 +7,43 @@
              
              xmlns:local="clr-namespace:Logistickas"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="660" d:DesignWidth="1000">
+    <Grid Loaded="Grid_Loaded">
         <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.8}">
             <Grid>
-                <ListView>
-                    <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Title}">Модель</GridViewColumn>
-                    </GridView>
-                </ListView>
+                <StackPanel HorizontalAlignment="Left" Width="auto" VerticalAlignment="Top" Height="auto">
+                    <Grid>
+                        <ListView Name="ListData" Height="250" Width="1118" VerticalAlignment="Top">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Namessss" Width="100"/>
+                                 </GridView>                        
+                            </ListView.View>      
+                         </ListView>
+                    </Grid>
+                </StackPanel>
+                    <StackPanel Width="400" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Margin="40 250 0 0">
+                    <TextBlock Height="30" Text="Имя" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
+                    <TextBox Height="30" FontSize="18" TextAlignment="Center"/>
+                    <TextBlock Height="30" Text="Фамилия" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
+                     <TextBox Height="30" FontSize="18" TextAlignment="Center"/>
+                    <TextBlock Height="30" Text="Отчество" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
+                    <TextBox Height="30" TextAlignment="Center"/>
+                     </StackPanel>
+                <StackPanel  Width="500" HorizontalAlignment="Right" Height="300" VerticalAlignment="Top" Margin="0 250 30 0">
+                    <TextBlock Height="30" Text="Имя" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
+                    <TextBox Height="30" FontSize="18" TextAlignment="Center"/>
+                    <TextBlock Height="30" Text="Фамилия" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
+                    <TextBox Height="30" FontSize="18" TextAlignment="Center"/>
+                    <TextBlock Height="30" Text="Отчество" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
+                    <TextBox Height="30" TextAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Height="100" VerticalAlignment="Top" Margin="0 550 0 0" Orientation="Horizontal">
+                    <Button Height="80" Width="150"/>
+                    
+                </StackPanel>
             </Grid>
+           
             
         </materialDesign:TransitioningContent>
 
