@@ -15,7 +15,7 @@
         </StackPanel>
         <StackPanel Height="130">
             <TextBlock x:Name="TextBlock_Find" TextAlignment="Center" Margin="0 10 0 0"  FontSize="22" Height="40" Width="400"/>
-            <TextBox FontSize="22" x:Name="TextBox_Find" Width="400"  Height="70" TextChanged="TextBox_Find_TextChanged"/>
+            <TextBox FontSize="22" x:Name="TextBox_Find" Width="400"  Height="70" TextChanged="TextBox_Find_TextChanged" KeyDown="TextBox_Find_KeyDown"/>
         </StackPanel>
         <Button x:Name="Button_Find_OK" Content="Поиск" VerticalAlignment="Bottom" Height="50" Width="150" Margin="10" Click="Button_Find_OK_Click"/>
 

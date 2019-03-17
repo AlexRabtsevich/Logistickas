@@ -35,8 +35,7 @@ namespace Logistickas
         public DataBasePage()
         {
             InitializeComponent();
-            InitializeDataGrids();
-            
+            InitializeDataGrids();           
 
         }
 
@@ -101,6 +100,7 @@ namespace Logistickas
             try
             {
                 number_ID_Data = (Int64)DataGrids.CurrentRow.Cells[0].Value;
+
                 MessageBoxResult result = MessageBox.Show("Вы точно хотите удалить запись", "Удаление записи", MessageBoxButton.OKCancel, MessageBoxImage.Information);
 
                 if (result == MessageBoxResult.OK)
@@ -138,27 +138,40 @@ namespace Logistickas
             {
                 Find_To_BD find_To_BD = new Find_To_BD();
                 find_To_BD.ShowDialog();
+
                 using (DB = new SQLiteConnection(cnStr))
                 {
                     DB.OpenAsync();
+                    if (find_To_BD.ID)
+                    {
+                        commanStr = "SELECT* FROM MAIN WHERE Код_товара LIKE  '%' || @ID || '%' ";
+                    }
+                    else
+                    {
+                        commanStr = "SELECT* FROM MAIN WHERE Название_товара LIKE  '%' || @NAME || '%' ";
 
-                    commanStr = "SELECT* FROM MAIN WHERE Код_товара LIKE  '%' || @ID || '%' ";
+                    }
 
-                    SQLiteCommand command = new SQLiteCommand(commanStr, DB);
-                    command.Parameters.Add("@ID", System.Data.DbType.Int32).Value = find_To_BD.TextBox_Find.Text;
-                    command.ExecuteScalar();
-                    adapter = new SQLiteDataAdapter(command);
+                    if (find_To_BD.TextBox_Find.Text != "")
+                    {
+                        SQLiteCommand command = new SQLiteCommand(commanStr, DB);
 
-                    table = new DataSet();
-                    adapter.Fill(table);
+                        command.Parameters.Add("@ID", System.Data.DbType.Int32).Value = find_To_BD.TextBox_Find.Text;
+                        command.Parameters.Add("NAME", System.Data.DbType.String).Value = find_To_BD.TextBox_Find.Text.ToUpper();
 
-                    DataGrids.DataSource = table.Tables[0];
-                    DataGrids.Columns[0].ReadOnly = true;
-                    DataGrids.Columns[1].ReadOnly = true;
-                    DataGrids.Columns[2].ReadOnly = true;
-                    DataGrids.Columns[3].ReadOnly = true;
+                        command.ExecuteScalar();
+                        adapter = new SQLiteDataAdapter(command);
 
+                        table = new DataSet();
+                        adapter.Fill(table);
 
+                        DataGrids.DataSource = table.Tables[0];
+                        DataGrids.Columns[0].ReadOnly = true;
+                        DataGrids.Columns[1].ReadOnly = true;
+                        DataGrids.Columns[2].ReadOnly = true;
+                        DataGrids.Columns[3].ReadOnly = true;
+                    }
+                    
                 }
             }
             catch (Exception ex)
@@ -211,8 +224,6 @@ namespace Logistickas
             {
                 MessageBox.Show(ex.Message);
             }
-        
-
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)

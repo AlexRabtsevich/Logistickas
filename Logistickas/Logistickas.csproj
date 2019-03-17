@@ -76,6 +76,10 @@
     <Compile Include="DataBasePage.xaml.cs">
       <DependentUpon>DataBasePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Driver.cs" />
+    <Compile Include="Driver_Pages.xaml.cs">
+      <DependentUpon>Driver_Pages.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Find_To_BD.xaml.cs">
       <DependentUpon>Find_To_BD.xaml</DependentUpon>
     </Compile>
@@ -85,6 +89,9 @@
     <Compile Include="ContactPage.xaml.cs">
       <DependentUpon>ContactPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Main_Pages.xaml.cs">
+      <DependentUpon>Main_Pages.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Update_To_BD.xaml.cs">
       <DependentUpon>Update_To_BD.xaml</DependentUpon>
     </Compile>
@@ -93,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DataBasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Driver_Pages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,6 +128,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ContactPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main_Pages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

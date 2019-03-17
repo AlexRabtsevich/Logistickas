@@ -22,7 +22,7 @@ namespace Logistickas
     public partial class Update_To_BD : Window
     {
         private string name;
-        private string price;
+        private double price;
         private int quantity;
 
         public Update_To_BD()
@@ -63,8 +63,8 @@ namespace Logistickas
             Button_New_Add.Background = Brushes.LightGray;
             Button_Add.Background = Brushes.LightGray;
 
-
-
+            TextBox_Add_Update.IsReadOnly = false;
+            TextBox_Add_Update.Text = string.Empty;
         }
 
         private void Button_Cancel_Click(object sender, RoutedEventArgs e)
@@ -77,11 +77,14 @@ namespace Logistickas
             Button_Reduce.Background = Brushes.LightGray;
             Button_New_Add.Background = Brushes.LightSeaGreen;
             Button_Add.Background = Brushes.LightGray;
+
+            TextBox_Add_Update.IsReadOnly = false;
+            TextBox_Add_Update.Text = string.Empty;
         }
 
         private void Button_Update_Click(object sender, RoutedEventArgs e)
         {
-            
+
             try
             {
                 if (TextBox_Name_Update.Text != "" && TextBox_Price_Update.Text != "" && TextBox_Add_Update.Text != "")
@@ -90,21 +93,36 @@ namespace Logistickas
 
                     using (SQLiteConnection DB = new SQLiteConnection("Data Source=Bd\\Base.db; Version=3"))
                     {
-                        
-                        if (Button_Add.Background== Brushes.LightSeaGreen)
+
+                        if (Button_Add.Background == Brushes.LightSeaGreen)
                         {
                             quantity += Convert.ToInt32(TextBox_Add_Update.Text);
                         }
+
+                        if (Button_Reduce.Background == Brushes.LightSeaGreen)
+                        {
+                            quantity -= Convert.ToInt32(TextBox_Add_Update.Text);
+                        }
+
+                        if (Button_New_Add.Background == Brushes.LightSeaGreen)
+                        {
+                            quantity = Convert.ToInt32(TextBox_Add_Update.Text);
+                        }
+
+
                         DB.Open();
+
                         SQLiteCommand command = DB.CreateCommand();
                         command.CommandText = "UPDATE MAIN SET Название_товара =@NAME , Количество_товара =@QUANTITY, Цена_товара_за_одну_еденицу =@PRICE WHERE Код_товара = @ID";
+
                         command.Parameters.Add("@ID", System.Data.DbType.Int64).Value = TextBox_ID_Update.Text;
                         command.Parameters.Add("@NAME", System.Data.DbType.String).Value = TextBox_Name_Update.Text;
-                        command.Parameters.Add("@QUANTITY", System.Data.DbType.Int32).Value =quantity;
-                        command.Parameters.Add("@PRICE", System.Data.DbType.Double).Value =Convert.ToDouble( TextBox_Price_Update.Text);
+                        command.Parameters.Add("@QUANTITY", System.Data.DbType.Int32).Value = quantity;
+                        command.Parameters.Add("@PRICE", System.Data.DbType.Double).Value = Convert.ToDouble(TextBox_Price_Update.Text);
 
                         command.ExecuteScalar();
-                        MessageBox.Show("OK");
+                        MessageBox.Show("Запись успешно изменена", "Успешно", MessageBoxButton.OK);
+                        this.Close();
                     }
 
                 }
@@ -112,18 +130,44 @@ namespace Logistickas
                 {
                     MessageBox.Show("Поля не могут быть пустыми", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-            }
+            }            
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
 
+
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             quantity =Convert.ToInt32( TextBox_Add_Update.Text);
+            price = Convert.ToDouble(TextBox_Price_Update.Text);
         }
+
+        private void TextBox_Add_Update_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.D0:                 
+                case Key.D1:
+                case Key.D2:
+                case Key.D3:
+                case Key.D4:
+                case Key.D5:
+                case Key.D6:
+                case Key.D7:
+                case Key.D8:
+                case Key.D9:
+                    e.Handled = false;
+                    break;
+                default:
+                    e.Handled = true;
+                    break;
+            }
+        }
+
+        
     }
 }

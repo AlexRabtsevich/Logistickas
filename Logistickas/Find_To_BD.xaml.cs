@@ -21,8 +21,13 @@ namespace Logistickas
     /// </summary>
     public partial class Find_To_BD : Window
     {
-       
-        private bool ID = false;
+
+        private bool id = false;
+        public bool ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public Find_To_BD()
         {
@@ -42,6 +47,7 @@ namespace Logistickas
             Button_Find_Name.Background = Brushes.LightGray;
             TextBox_Find.Visibility = Visibility.Visible;
             ID = true;
+            
         }
 
         private void Button_Find_Name_Click(object sender, RoutedEventArgs e)
@@ -67,6 +73,31 @@ namespace Logistickas
         private void TextBox_Find_TextChanged(object sender, TextChangedEventArgs e)
         {
             Button_Find_OK.IsEnabled = true;
+        }
+
+        private void TextBox_Find_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (ID)
+            {
+                switch (e.Key)
+                {
+                    case Key.D0:
+                    case Key.D1:
+                    case Key.D2:
+                    case Key.D3:
+                    case Key.D4:
+                    case Key.D5:
+                    case Key.D6:
+                    case Key.D7:
+                    case Key.D8:
+                    case Key.D9:
+                        e.Handled = false;
+                        break;
+                    default:
+                        e.Handled = true;
+                        break;
+                }
+            }
         }
     }
 }

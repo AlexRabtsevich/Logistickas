@@ -43,9 +43,17 @@ namespace Logistickas
             MoveCursorMenu(index);
             switch (index)
             {
+                case 0:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Main_Pages());
+                    break;
                 case 1:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new DataBasePage());
+                    break;
+                case 2:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Driver_Pages());
                     break;
                 case 5:
                     GridPrincipal.Children.Clear();
