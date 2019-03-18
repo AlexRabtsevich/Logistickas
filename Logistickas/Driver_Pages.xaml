@@ -13,34 +13,50 @@
             <Grid>
                 <StackPanel HorizontalAlignment="Left" Width="auto" VerticalAlignment="Top" Height="auto">
                     <Grid>
-                        <ListView Name="ListData" Height="250" Width="1118" VerticalAlignment="Top">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Namessss" Width="100"/>
-                                 </GridView>                        
+                        <ListView FontSize="15" Name="ListData" Height="250" Width="1118" VerticalAlignment="Top" PreviewMouseLeftButtonUp="ListData_PreviewMouseLeftButtonUp" >
+                            <ListView.View >
+                                <GridView >
+                                    <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Имя" Width="110"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Фамилия" Width="120"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding SecondName}" Header="Отчество" Width="140"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Age}" Header="Возраст" Width="100"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Car}" Header="Название машины" Width="180"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding NumberCar}" Header="Номер машины" Width="160"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding NumberPhone}" Header="Мобильный телефон" Width="200"/>
+                                </GridView>                        
                             </ListView.View>      
                          </ListView>
                     </Grid>
                 </StackPanel>
-                    <StackPanel Width="400" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Margin="40 250 0 0">
-                    <TextBlock Height="30" Text="Имя" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
-                    <TextBox Height="30" FontSize="18" TextAlignment="Center"/>
-                    <TextBlock Height="30" Text="Фамилия" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
-                     <TextBox Height="30" FontSize="18" TextAlignment="Center"/>
-                    <TextBlock Height="30" Text="Отчество" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
-                    <TextBox Height="30" TextAlignment="Center"/>
-                     </StackPanel>
-                <StackPanel  Width="500" HorizontalAlignment="Right" Height="300" VerticalAlignment="Top" Margin="0 250 30 0">
-                    <TextBlock Height="30" Text="Имя" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
-                    <TextBox Height="30" FontSize="18" TextAlignment="Center"/>
-                    <TextBlock Height="30" Text="Фамилия" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
-                    <TextBox Height="30" FontSize="18" TextAlignment="Center"/>
-                    <TextBlock Height="30" Text="Отчество" FontSize="18" Margin="0 30 0 0" TextAlignment="Center"/>
-                    <TextBox Height="30" TextAlignment="Center"/>
+                <StackPanel Width="400" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Margin="40 255 0 0">
+                    <TextBlock Height="30" Text="Имя" FontSize="18" Margin="0 20 0 0" TextAlignment="Center"/>
+                    <TextBox x:Name="TextBox_Name" Height="40" FontSize="18" TextAlignment="Center"/>
+                    <TextBlock Height="30" Text="Фамилия" FontSize="18" Margin="0 20 0 0" TextAlignment="Center"/>
+                    <TextBox x:Name="TextBox_LastName" Height="40" FontSize="18" TextAlignment="Center"/>
+                    <TextBlock Height="30" Text="Отчество" FontSize="18" Margin="0 20 0 0" TextAlignment="Center"/>
+                    <TextBox x:Name="TextBox_SecondName" FontSize="18" Height="40" TextAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Height="100" VerticalAlignment="Top" Margin="0 550 0 0" Orientation="Horizontal">
-                    <Button Height="80" Width="150"/>
-                    
+                <StackPanel  Width="500" HorizontalAlignment="Right" Height="300" VerticalAlignment="Top" Margin="0 250 30 0">
+                    <Grid Height="100">
+                        <StackPanel Orientation="Horizontal" Height="30" Margin="0 30" VerticalAlignment="Top">
+                                 <TextBlock Height="30" Text="Возраст" FontSize="18" Margin="0 0 0 0" TextAlignment="Center"/>
+                            <TextBlock Height="30" Text="Мобильный телефон" FontSize="18" Margin="190 0 0 0" TextAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Height="50" VerticalAlignment="Bottom" Margin="0 0 0 0" Orientation="Horizontal">
+                            <TextBox x:Name="TextBox_Age" Height="40" Width="70" FontSize="18"  TextAlignment="Center"/>
+                            <TextBox x:Name="TextBox_Phone" Height="40" Width="280" FontSize="18" Margin="150 0 0 0" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                        <TextBlock Height="30" Text="Название машины" FontSize="18" Margin="0 15 0 0" TextAlignment="Center"/>
+                    <TextBox x:Name="TextBox_NameCar" Height="40" FontSize="18" TextAlignment="Center"/>
+                        <TextBlock Height="30" Text="Номер машины" FontSize="18" Margin="0 20 0 0" TextAlignment="Center"/>
+                    <TextBox x:Name="TextBox_NumberCar" FontSize="18" Height="40" TextAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Height="100" VerticalAlignment="Top" Margin="0 550 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button x:Name="ButtonUpdate_Driver" Height="60" Width="150" Content="Изменить" FontSize="18"  Margin="30 0"/>
+                    <Button x:Name="ButtonAdd_Driver" Height="60" Width="150" Content="Добавить" FontSize="18" Margin="30 0" Click="ButtonAdd_Driver_Click"/>
+                    <Button x:Name="ButtonFind_Driver" Height="60" Width="150" Content="Найти" FontSize="18" Margin="30 0" Click="ButtonFind_Driver_Click"/>
+
                 </StackPanel>
             </Grid>
            

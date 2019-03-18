@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\data\Logistickas\Logistickas\obj\Debug\
+D:\Project\Logistickas\Logistickas\obj\Debug\
 Logistickas
 none
 false
 DEBUG;TRACE
-C:\data\Logistickas\Logistickas\App.xaml
+D:\Project\Logistickas\Logistickas\App.xaml
 9-1123197263
 
 14-29530798
-201705611841
+20-1364900640
 Add_Window.xaml;DataBasePage.xaml;Driver_Pages.xaml;Find_To_BD.xaml;HomeControl.xaml;MainWindow.xaml;ContactPage.xaml;Main_Pages.xaml;Update_To_BD.xaml;
 
 False

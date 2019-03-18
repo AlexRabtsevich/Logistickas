@@ -21,7 +21,7 @@ namespace Logistickas
     /// </summary>
     public partial class Update_To_BD : Window
     {
-        private string name;
+        
         private double price;
         private int quantity;
 
