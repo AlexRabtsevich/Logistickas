@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Logistickas
-{
+{   [Serializable]
     class Driver
     {
 
         private string name;
         private string lastname;
         private string secondname;
-        private int age;
+        private string age;
         private string car;
         private string numberPhone;
         private string numberCar;
@@ -47,7 +47,7 @@ namespace Logistickas
             set { car = value; }
             get { return car; }
         }
-        public int Age
+        public string Age
         {
             set { age = value; }
             get { return age; }
@@ -56,7 +56,7 @@ namespace Logistickas
         {
 
         }
-        public Driver(string name, string lastname,string secondname,string car, string numberphone,string numbercar,int age)
+        public Driver(string name, string lastname,string secondname,string car, string numberphone,string numbercar,string age)
         {
             Age = age;
             Name = name;
