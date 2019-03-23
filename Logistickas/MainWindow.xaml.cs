@@ -55,13 +55,23 @@ namespace Logistickas
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new Driver_Pages());
                     break;
+                case 3:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Make_Deal_Page());
+                    break;
+
+                case 4:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new MapsPage());
+                    break;
+
                 case 5:
                     GridPrincipal.Children.Clear();
                     GridPrincipal.Children.Add(new ContactPage());
                     break;
                 default:
                     break;
-            }
+            }   
         }
 
         private void MoveCursorMenu(int index)
