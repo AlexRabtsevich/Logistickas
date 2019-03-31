@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "задача-PageOne",
+      "appliesTo": "Logistickas/Assets/PageOne.png",
+      "type": "launch"
+    }
+  ]
+}

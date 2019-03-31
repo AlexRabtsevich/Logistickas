@@ -77,7 +77,7 @@ namespace Logistickas
 
             TakeOrderPage.builder.AppendLine(string.Format("Пункт разгрузки: {0}.", TakeOrderPage.countShop));
 
-            TakeOrderPage.builder.AppendLine(string.Format("Название: {0}. Адресс г. {1} ул. {2} номер ул. {3} ", 
+            TakeOrderPage.builder.AppendLine(string.Format("Название: {0}. Адрес г. {1} ул. {2} номер ул. {3} ", 
                TakePlacePage.Place.NamePlace, TakePlacePage.Place.City, TakePlacePage.Place.Street, TakePlacePage.Place.House));
 
             TakeOrderPage.builder.AppendLine(new string('_', 73));

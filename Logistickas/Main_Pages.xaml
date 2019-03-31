@@ -7,26 +7,78 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="700" d:DesignWidth="1118">
     <Grid>
         <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.8}">
-            <Grid>
-                <StackPanel Height="50" VerticalAlignment="Top" Margin="50">
-                    <TextBlock FontSize="27" Text="Для чего данная программа" TextAlignment="Center"/>
+            <Grid Height="700" Width="1118">
+                <StackPanel   Width="300" HorizontalAlignment="Left" Background="DarkSlateGray" Margin="50 15 0 0" Height="300" VerticalAlignment="Top">
+                    <StackPanel  Width="290" HorizontalAlignment="Left" Margin="5" Height="290" Background="AliceBlue" VerticalAlignment="Top" >
+                    <TextBlock Height="25" Text="Локальная база данных" TextAlignment="Center" FontSize="18"/>
+                    <Image Width="220" Source="Assets/PageOne.jpg" Margin="0 10 0 0" Height="220" >
+                        <Image.Effect>
+                            <DropShadowEffect Color="DarkSlateGray" BlurRadius="35">                                
+                            </DropShadowEffect>
+                        </Image.Effect>
+                    </Image>
                 </StackPanel>
-                <StackPanel Height="300" Orientation="Vertical" VerticalAlignment="Top" Margin="100 130 100 0">
-                    <TextBlock FontSize="27" Text="Для учета товара" TextAlignment="Center" Margin="5"/>
-                    <TextBlock FontSize="27" Text="Не требует интернет" TextAlignment="Center" Margin="5" />
-                    <TextBlock FontSize="27" Text="Локальная база данных" TextAlignment="Center" Margin="5"/>
-                    <TextBlock FontSize="27" Text="Карта местности" TextAlignment="Center" Margin="5"/>
-                    <TextBlock FontSize="27" Text="Оформление заказов" TextAlignment="Center" Margin="5"/>
-                    <TextBlock FontSize="27" Text="Сведения о грузоперевозчиках" TextAlignment="Center" Margin="5"/>
+                </StackPanel>
+                <StackPanel   Width="300" HorizontalAlignment="Left" Background="DarkSlateGray" Margin="395 15 0 0" Height="300" VerticalAlignment="Top">
+                    <StackPanel  Width="290" HorizontalAlignment="Left" Margin="5" Height="290" Background="AliceBlue" VerticalAlignment="Top" >
+                        <TextBlock Height="25" Text="Все операции с базой данных" TextAlignment="Center" FontSize="18"/>
+                        <Image Width="220" Source="Assets/PageThree.jpg" Margin="0 10 0 0" Height="220" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="DarkSlateGray" BlurRadius="35">
+                                </DropShadowEffect>
+                            </Image.Effect>
+                        </Image>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel   Width="300" HorizontalAlignment="Left" Background="DarkSlateGray" Margin="750 15 0 0" Height="300" VerticalAlignment="Top">
+                    <StackPanel  Width="290" HorizontalAlignment="Left" Margin="5" Height="290" Background="AliceBlue" VerticalAlignment="Top" >
+                        <TextBlock Height="25" Text="База грузоперевозчиков" TextAlignment="Center" FontSize="18"/>
+                        <Image Width="220" Source="Assets/PageTwo.jpg" Margin="0 10 0 0" Height="220" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="DarkSlateGray" BlurRadius="35">
+                                </DropShadowEffect>
+                            </Image.Effect>
+                        </Image>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel   Width="300" HorizontalAlignment="Left" Background="DarkSlateGray" Margin="50 355 0 0" Height="300" VerticalAlignment="Top">
+                    <StackPanel  Width="290" HorizontalAlignment="Left" Margin="5" Height="290" Background="AliceBlue" VerticalAlignment="Top" >
+                        <TextBlock Height="25" Text="Карта местности" TextAlignment="Center" FontSize="18"/>
+                        <Image Width="220" Source="Assets/PageFour.jpg" Margin="0 10 0 0" Height="220" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="DarkSlateGray" BlurRadius="35">
+                                </DropShadowEffect>
+                            </Image.Effect>
+                        </Image>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel   Width="300" HorizontalAlignment="Left" Background="DarkSlateGray" Margin="395 355 0 0" Height="300" VerticalAlignment="Top">
+                    <StackPanel  Width="290" HorizontalAlignment="Left" Margin="5" Height="290" Background="AliceBlue" VerticalAlignment="Top" >
+                        <TextBlock Height="25" Text="База адресов заказов" TextAlignment="Center" FontSize="18"/>
+                        <Image Width="220" Source="Assets/PageFive.jpg" Margin="0 10 0 0" Height="220" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="DarkSlateGray" BlurRadius="35">
+                                </DropShadowEffect>
+                            </Image.Effect>
+                        </Image>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel   Width="300" HorizontalAlignment="Left" Background="DarkSlateGray" Margin="750 355 0 0" Height="300" VerticalAlignment="Top">
+                    <StackPanel  Width="290" HorizontalAlignment="Left" Margin="5" Height="290" Background="AliceBlue" VerticalAlignment="Top" >
+                        <TextBlock Height="25" Text="Оформление Заказа" TextAlignment="Center" FontSize="18"/>
+                        <Image Width="220" Source="Assets/PageSix.jpg" Margin="0 10 0 0" Height="220" >
+                            <Image.Effect>
+                                <DropShadowEffect Color="DarkSlateGray" BlurRadius="35">
+                                </DropShadowEffect>
+                            </Image.Effect>
+                        </Image>
+                    </StackPanel>
+                </StackPanel>
 
-                </StackPanel>
-                
-                
             </Grid> 
-            
             
         </materialDesign:TransitioningContent>
 

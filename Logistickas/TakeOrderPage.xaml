@@ -20,8 +20,8 @@
             <StackPanel>
                 <TextBlock x:Name="TextDriver" FontSize="18" Text="Водитель :" Margin="40 10 0 0"/>
                 <StackPanel Orientation="Horizontal">                    
-                    <TextBlock x:Name="TextQuantityPlace" FontSize="18" Text="Количество пунктов разгрузки :" Margin="40 10 0 0"/>
-                    <TextBlock  Text="Выбранный адресс :" FontSize="18" x:Name="TextPlaceHere" Margin="120 10 0 0"/>
+                    <TextBlock x:Name="TextQuantityPlace" FontSize="18" Text="Количество пунктов разгрузки: " Margin="40 10 0 0"/>
+                    <TextBlock  Text="Выбранный адрес: " FontSize="18" x:Name="TextPlaceHere" Margin="120 10 0 0"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

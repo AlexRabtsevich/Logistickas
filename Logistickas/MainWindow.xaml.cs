@@ -89,5 +89,10 @@ namespace Logistickas
         {
             Process.Start("https://www.gmail.com/mail/help/intl/ru/about.html?de.");
         }
+
+        private void ButtonInfo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Программа работает в тестовом режиме, возможны баги и ошибки", "Инфо", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }
