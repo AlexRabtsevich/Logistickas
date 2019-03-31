@@ -30,13 +30,11 @@ namespace Logistickas
         SQLiteDataAdapter adapter;
         DataSet table;
         private Int64 number_ID_Data;
-        
 
         public DataBasePage()
         {
             InitializeComponent();
             InitializeDataGrids();           
-
         }
 
         private void InitializeDataGrids()
@@ -80,7 +78,6 @@ namespace Logistickas
             }
 
         }
-        
 
         private  void OpenBd_Button_Click(object sender, RoutedEventArgs e)
         {
@@ -144,11 +141,11 @@ namespace Logistickas
                     DB.OpenAsync();
                     if (find_To_BD.ID)
                     {
-                        commanStr = "SELECT* FROM MAIN WHERE Код_товара LIKE  '%' || @ID || '%' ";
+                        commanStr = "SELECT* FROM MAIN WHERE  Код_товара LIKE  '%' || @ID || '%' ";
                     }
                     else
                     {
-                        commanStr = "SELECT* FROM MAIN WHERE Название_товара LIKE  '%' || @NAME || '%' ";
+                        commanStr = "SELECT* FROM MAIN WHERE UPPER (Название_товара) LIKE  '%' || @NAME || '%' ";
 
                     }
 
@@ -157,7 +154,7 @@ namespace Logistickas
                         SQLiteCommand command = new SQLiteCommand(commanStr, DB);
 
                         command.Parameters.Add("@ID", System.Data.DbType.Int32).Value = find_To_BD.TextBox_Find.Text;
-                        command.Parameters.Add("NAME", System.Data.DbType.String).Value = find_To_BD.TextBox_Find.Text.ToUpper();
+                        command.Parameters.Add("NAME", System.Data.DbType.String).Value = find_To_BD.TextBox_Find.Text;
 
                         command.ExecuteScalar();
                         adapter = new SQLiteDataAdapter(command);

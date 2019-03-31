@@ -28,7 +28,6 @@ namespace Logistickas
 
         private async void Add_Button_DB_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
                 string conStr = "Data Source=Bd\\Base.db; Version=3";
@@ -44,9 +43,12 @@ namespace Logistickas
 
                         command.Parameters.Add("@name", System.Data.DbType.String).Value = TextBox_Name.Text.ToUpper();
                         command.Parameters.Add("@quantity", System.Data.DbType.Int32).Value = TextBox_Quantity.Text;
-                        command.Parameters.Add("@price", System.Data.DbType.Double).Value = TextBox_Price.Text;
+                        command.Parameters.Add("@price", System.Data.DbType.Double).Value = TextBox_Price.Text.Replace(".", ",");
+
                         await command.ExecuteNonQueryAsync();
+
                         MessageBox.Show("Запись добавленна успешно", "Успех", MessageBoxButton.OK);
+
                         TextBox_Name.Text = string.Empty;
                         TextBox_Quantity.Text = string.Empty;
                         TextBox_Price.Text = string.Empty;
@@ -55,15 +57,11 @@ namespace Logistickas
                 }
                 else
                     MessageBox.Show("Поля не должны быть пустыми", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-
-
-
         }
 
         private void Cansel_Button_Click(object sender, RoutedEventArgs e)

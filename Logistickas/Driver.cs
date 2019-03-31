@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Logistickas
 {   [Serializable]
-    class Driver
+    public class Driver
     {
 
         private string name;

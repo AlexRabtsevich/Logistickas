@@ -55,6 +55,7 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -95,6 +96,7 @@
     <Compile Include="Add_Window.xaml.cs">
       <DependentUpon>Add_Window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bd.cs" />
     <Compile Include="DataBasePage.xaml.cs">
       <DependentUpon>DataBasePage.xaml</DependentUpon>
     </Compile>
@@ -119,6 +121,16 @@
     </Compile>
     <Compile Include="MapsPage.xaml.cs">
       <DependentUpon>MapsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceTake.cs" />
+    <Compile Include="TakeFinishPage.xaml.cs">
+      <DependentUpon>TakeFinishPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TakeOrderPage.xaml.cs">
+      <DependentUpon>TakeOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TakePlacePage.xaml.cs">
+      <DependentUpon>TakePlacePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Take_Driver_Page.xaml.cs">
       <DependentUpon>Take_Driver_Page.xaml</DependentUpon>
@@ -174,6 +186,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TakeFinishPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TakeOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TakePlacePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Take_Driver_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,7 +234,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Снимок экрана %281%29.png" />
   </ItemGroup>

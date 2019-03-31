@@ -24,9 +24,10 @@ namespace Logistickas
     /// </summary>
     public partial class Driver_Pages : UserControl
     {
-        ObservableCollection<Driver> drivers;
+        public ObservableCollection<Driver> drivers;
         private int number;
         private string DriverFile;
+         
 
         public Driver_Pages()
         {
@@ -36,7 +37,7 @@ namespace Logistickas
             ButtonUpdate_Driver.Background = Brushes.LightSeaGreen;
             IsReadOnlyTextBox();
             DriverFile = @"Driver\Driver.dat";
-           LoadDriverCollection(DriverFile);
+            LoadDriverCollection(DriverFile);
             
         }
         private void IsReadOnlyTextBox()
@@ -105,7 +106,7 @@ namespace Logistickas
                     TextBox_NameCar.Text != "" && TextBox_NumberCar.Text != "" && TextBox_Name.Text != "" && TextBox_Phone.Text != "")
                 {
                     
-                    drivers.Add(new Driver(TextBox_Name.Text, TextBox_LastName.Text, TextBox_SecondName.Text, TextBox_NameCar.Text, TextBox_Phone.Text, TextBox_NumberCar.Text, TextBox_Age.Text));
+                    drivers[number]=(new Driver(TextBox_Name.Text, TextBox_LastName.Text, TextBox_SecondName.Text, TextBox_NameCar.Text, TextBox_Phone.Text, TextBox_NumberCar.Text, TextBox_Age.Text));
 
                     SaveDriverCollection(drivers, DriverFile);
 
@@ -114,7 +115,7 @@ namespace Logistickas
                 }
                 else
                 {
-                    MessageBox.Show("Запаолните все поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Заполните все поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     IsReadOnlyTextBox();
                 }
             }
@@ -128,7 +129,31 @@ namespace Logistickas
         {
             IsClearOnlyTextBox();
             IsWriteOnlyTextBox();
-            
+            try
+            {
+                if (TextBox_LastName.Text != "" && TextBox_SecondName.Text != "" && TextBox_Age.Text != "" &&
+                    TextBox_NameCar.Text != "" && TextBox_NumberCar.Text != "" && TextBox_Name.Text != "" && TextBox_Phone.Text != "")
+                {
+
+                    drivers.Add(new Driver(TextBox_Name.Text, TextBox_LastName.Text, TextBox_SecondName.Text, TextBox_NameCar.Text, TextBox_Phone.Text, TextBox_NumberCar.Text, TextBox_Age.Text));
+
+                    SaveDriverCollection(drivers, DriverFile);
+
+                    MessageBox.Show("Запись успешно добавлена", "Добавление записи", MessageBoxButton.OK);
+                    IsReadOnlyTextBox();
+                }
+                else
+                {
+                    MessageBox.Show("Заполните все поля", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    IsReadOnlyTextBox();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         private void ButtonUpdate_Driver_Click(object sender, RoutedEventArgs e)

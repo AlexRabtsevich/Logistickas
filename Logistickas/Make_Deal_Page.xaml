@@ -7,22 +7,45 @@
              
              xmlns:local="clr-namespace:Logistickas"
              mc:Ignorable="d" 
-             d:DesignHeight="680" d:DesignWidth="1118">
+             d:DesignHeight="700" d:DesignWidth="1118">
     <Grid>
         <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.8}">
             <Grid>
-                <Grid Background="Beige" Height="100" Width="1118" VerticalAlignment="Top">
-                    
-                </Grid>
-                <Grid Height="120" VerticalAlignment="Bottom" Background="Aquamarine">
-                    <Button Height="70" Width="120" x:Name="Button_Next" Click="Button_Next_Click"/>
-                </Grid>
-                <Grid x:Name="GridMake" Height="460" Margin="0 100 0 120" Background="Brown">
-                    
+                <Grid x:Name="GridMake" Height="700" Margin="0 0 0 0" Background="#FFCBE4EE">
+                    <Grid  Height="60" Width="1118" VerticalAlignment="Top" Background="Black">
+                        <StackPanel Background="AliceBlue" Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 0 2.5"  Height="57.5">
+                            <StackPanel x:Name="Panel1" HorizontalAlignment="Center" Width="100" Height="20" Margin="340 0 5 0" Background="Gray" />
+                            <StackPanel x:Name="Panel2" HorizontalAlignment="Center" Width="100" Height="20" Margin="5" Background="Gray"/>
+                            <StackPanel x:Name="Panel3" HorizontalAlignment="Center" Width="100" Height="20" Margin="5" Background="Gray"/>
+                            <StackPanel x:Name="Panel4" HorizontalAlignment="Center" Width="100" Height="20" Margin="5" Background="Gray"/>
+
+                        </StackPanel>
+                    </Grid>
+                    <Grid Height="300" Width="280" HorizontalAlignment="Left" Margin="70 0 0 0" Background="Black">
+                            <StackPanel Orientation="Vertical" Height="295" Width=" 275" Background="AliceBlue">
+                            <TextBlock Text="Шаг 1: Выбор водителя" FontSize="21" Margin="15"/>
+                            <TextBlock Width="240" FontSize="21" Height="190" Text="Для оформления заказа нажмите кнопку -Далее-. В появившимся окне выберите водителя для осуществления заказа. " TextWrapping="Wrap" />
+                             </StackPanel>
+                         </Grid>
+                         <Grid Height="300" Width="280" HorizontalAlignment="Left" Margin="410 0 0 0" Background="Black">
+                           <StackPanel Orientation="Vertical" Height="295" Width=" 275" Background="AliceBlue">
+                            <TextBlock Text="Шаг 2: Место Выгрузки" FontSize="21" Margin="15"/>
+                            <TextBlock Width="240" FontSize="21" Height="190" Text="В окне место выгрузки товара, выберите место из предложенных. Либо введите свое место выгрузки." TextWrapping="Wrap" />
+                           </StackPanel>
+                         </Grid>
+                         <Grid Height="300" Width="280" HorizontalAlignment="Left" Margin="750 0 0 0" Background="Black">
+                            <StackPanel Orientation="Vertical" Height="295" Width=" 275" Background="AliceBlue">
+                            <TextBlock Text="Шаг 3: Выбор товара" FontSize="21" Margin="15"/>
+                            <TextBlock Width="240" FontSize="21" Height="190" Text="В талице выберите товар и его количество для доставки в место выгрузки выбранным водителем. " TextWrapping="Wrap" />
+                            </StackPanel>
+                         </Grid>
+                         <Grid Height="90" Background="Black" VerticalAlignment="Bottom">
+                             <StackPanel Orientation="Horizontal" Background="AliceBlue" Height="85">
+                                <Button Height="50" Margin="480 0 0 0"  Content="Далее" Width="150" x:Name="Button_Next" Click="Button_Next_Click"/>
+                             </StackPanel>
+                         </Grid>
                 </Grid>
             </Grid>
         </materialDesign:TransitioningContent>
-
-
     </Grid>
 </UserControl>

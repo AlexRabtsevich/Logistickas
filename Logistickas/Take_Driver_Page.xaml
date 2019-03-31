@@ -4,9 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Logistickas"
-             mc:Ignorable="d" 
-             d:DesignHeight="460" d:DesignWidth="1118">
-    <Grid Background="Aqua">
+              mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1118">
+    <Grid x:Name="GridDriver">
+        <Grid  Height="60" Width="1118" VerticalAlignment="Top" Background="Black">
+            <StackPanel Background="AliceBlue" Orientation="Horizontal" VerticalAlignment="Center" Margin="0 0 0 2.5"  Height="57.5">
+                <StackPanel x:Name="Panel1" HorizontalAlignment="Center" Width="100" Height="20" Margin="340 0 5 0" Background="SeaGreen" />
+                <StackPanel x:Name="Panel2" HorizontalAlignment="Center" Width="100" Height="20" Margin="5" Background="Gray"/>
+                <StackPanel x:Name="Panel3" HorizontalAlignment="Center" Width="100" Height="20" Margin="5" Background="Gray"/>
+                <StackPanel x:Name="Panel4" HorizontalAlignment="Center" Width="100" Height="20" Margin="5" Background="Gray"/>
+
+            </StackPanel>
+        </Grid>
+        <Grid Height="40" Margin="0 60 0 0" Background="Gray" VerticalAlignment="Top" >
+            <StackPanel Background="AliceBlue" Height="38" Margin="0 0 0 2">
+                <TextBlock VerticalAlignment="Center" TextAlignment="Center" Text="Выбор водителя" FontSize="22"/>
+            </StackPanel>
+        </Grid>
+        <Grid Height="500" VerticalAlignment="Top" Margin="0 110 0 0">
+            <ListView FontSize="15" VerticalAlignment="Top" x:Name="TakeListDriver" PreviewMouseLeftButtonUp="TakeListDriver_PreviewMouseLeftButtonUp">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Имя" Width="110"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding LastName}" Header="Фамилия" Width="120"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding SecondName}" Header="Отчество" Width="140"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Age}" Header="Возраст" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Car}" Header="Название машины" Width="180"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding NumberCar}" Header="Номер машины" Width="160"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding NumberPhone}" Header="Мобильный телефон" Width="200"/>
+                    </GridView>
+                    
+                </ListView.View>
+            </ListView>
+        </Grid>
+        
+        <Grid Height="90" Margin="0 0 0 0" Background="Black" VerticalAlignment="Bottom">
+            <StackPanel Height="85" Background="AliceBlue">
+                <Button Height="50" Background="MediumSeaGreen" Margin="15" Content="Выбрать" x:Name="ButtonTakeDriverNext" Click="ButtonTakeDriverNext_Click" Width="150"/>
+            </StackPanel>
+        </Grid>
             
     </Grid>
 </UserControl>

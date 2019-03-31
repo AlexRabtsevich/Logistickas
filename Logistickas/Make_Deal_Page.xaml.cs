@@ -20,9 +20,12 @@ namespace Logistickas
     /// </summary>
     public partial class Make_Deal_Page : UserControl
     {
+        public static Driver driverTake;
         public Make_Deal_Page()
         {
-            InitializeComponent();
+                InitializeComponent();
+                Button_Next.Background = Brushes.MediumSeaGreen;
+                
         }
 
         private void Button_Next_Click(object sender, RoutedEventArgs e)
@@ -30,5 +33,6 @@ namespace Logistickas
             GridMake.Children.Clear();
             GridMake.Children.Add(new Take_Driver_Page());
         }
+
     }
 }

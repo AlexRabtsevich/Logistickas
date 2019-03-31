@@ -170,3 +170,9 @@ C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\Make_Deal_Pag
 C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\Make_Deal_Page.baml
 C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\Take_Driver_Page.g.cs
 C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\Take_Driver_Page.baml
+C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\TakePlacePage.g.cs
+C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\TakePlacePage.baml
+C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\TakeOrderPage.g.cs
+C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\TakeOrderPage.baml
+C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\TakeFinishPage.g.cs
+C:\Users\XIAOMi\Documents\GitHub\Logistickas\Logistickas\obj\Debug\TakeFinishPage.baml

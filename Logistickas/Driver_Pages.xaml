@@ -7,7 +7,7 @@
              
              xmlns:local="clr-namespace:Logistickas"
              mc:Ignorable="d" 
-             d:DesignHeight="670" d:DesignWidth="1000">
+             d:DesignHeight="700" d:DesignWidth="1118">
     <Grid Loaded="Grid_Loaded">
         <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.8}">
             <Grid>
@@ -53,9 +53,9 @@
                     <TextBox  x:Name="TextBox_NumberCar" FontSize="18" Height="40" TextAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Height="100" VerticalAlignment="Top" Margin="0 550 0 0" HorizontalAlignment="Center" Orientation="Horizontal">
-                    <Button x:Name="ButtonUpdate_Driver" Height="60" Width="200" Content="Изменить" FontSize="18"  Margin="30 0" Click="ButtonUpdate_Driver_Click"/>
-                    <Button x:Name="ButtonAdd_Driver" Height="60" Width="200" Content="Добавить" FontSize="18" Margin="30 0" Click="ButtonAdd_Driver_Click"/>
-                    <Button x:Name="ButtonNewAdd_Driver" Height="60" Width="200" Content="Новая запись" FontSize="18" Margin="30 0" Click="ButtonNewAdd_Driver_Click"/>
+                    <Button x:Name="ButtonUpdate_Driver" Height="50" Width="200" Content="Изменить" FontSize="18"  Margin="30 0" Click="ButtonUpdate_Driver_Click"/>
+                    <Button x:Name="ButtonAdd_Driver" Height="50" Width="200" Content="Добавить" FontSize="18" Margin="30 0" Click="ButtonAdd_Driver_Click"/>
+                    <Button x:Name="ButtonNewAdd_Driver" Height="50" Width="200" Content="Новая запись" FontSize="18" Margin="30 0" Click="ButtonNewAdd_Driver_Click"/>
 
                 </StackPanel>
             </Grid>

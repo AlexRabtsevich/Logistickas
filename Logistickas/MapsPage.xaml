@@ -12,8 +12,9 @@
     <Grid>
         <materialDesign:TransitioningContent x:Name="TransitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration= 0:0:0.8}">
             <Grid>
+                
                 <Grid Height="690" Width="875" HorizontalAlignment="Left" Margin="0 0 230 0">
-                    <gmaps:GMapControl HorizontalAlignment="Left" Width="860" x:Name="gMapcontrol" Loaded="GMapcontrol_Loaded"/>
+                  <gmaps:GMapControl HorizontalAlignment="Left" Width="860" x:Name="gMapcontrol" Loaded="GMapcontrol_Loaded"/>
                 </Grid>
                     <Grid Background="Beige" Height="690" Width="245" HorizontalAlignment="Left" Margin="860 0 0 0">
                             <ListView FontSize="18"  SelectionChanged="ListViewStreet_SelectionChanged" x:Name="ListViewStreet" Width="245">
@@ -25,7 +26,8 @@
                             <ListViewItem Content="Склад Брест" Width="auto" Height="60"/>
                             <ListViewItem Content="Склад Гродно" Width="auto" Height="60"/>
                             <ListViewItem Content="Склад Гомель" Width="auto" Height="60"/>
-                    </ListView>                     
+                    </ListView>
+
                 </Grid>                
             </Grid>            
         </materialDesign:TransitioningContent>
